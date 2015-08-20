@@ -1,0 +1,213 @@
+<head>
+  <title>indiceRevisoes</title>
+</head>
+
+<body>
+<h1>Moto Jomi</h1>
+{{> addFicha}}
+{{> indiceRevisoes}}
+
+
+</body>
+
+
+<template name="addFicha">
+   <!--<div id="addFicha">-->
+   <div id="nav"> 
+      <form>
+        <ul>
+            {{> matricula}}
+            {{> marcas}}
+            <!--<input type="text" name="fichaMarca" placeholder="Inserir marca"><br>-->
+            Modelo:<br>
+            <input type="text" name="fichaModelo" placeholder="Inserir modelo"><br>
+            Ano:<br>
+            <input type="number" name="fichaAno" placeholder="Inserir ano"><br>
+            Criado:<br>
+            <input type="date" name="fichaCriado" placeholder=""><br>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Adicionar Ficha">
+        </ul>
+      </form>
+  </div>
+</template>
+
+<template name="matricula">
+            Matricula:<br>
+            <input type="text" name="fichaMatricula" maxlength="8" size="8" placeholder="Inserir matricula"><br>
+            <!--<input type="text" class="input" id="fichaMatricula" data-mask="99-99-99" size="8" maxlength="8" pattern="\d*"><br>-->
+</template>
+
+<template name="marcas">
+            Marca:<br>
+            <select name="fichaMarca" class="as_sel" onchange="$('select[name=model]').val('')"><option value="" selected="">Marca</option>
+              <option value="Adly">Adly</option>
+              <option value="Aeon">Aeon</option>
+              <option value="Aixam">Aixam</option>
+              <option value="Aprilia">Aprilia</option>
+              <option value="Benelli">Benelli</option>
+              <option value="Beta">Beta</option>
+              <option value="Bimota">Bimota</option>
+              <option value="BMW">BMW</option>
+              <option value="Bombardier">Bombardier</option>
+              <option value="Buell">Buell</option>
+              <option value="Cagiva">Cagiva</option>
+              <option value="Daelim">Daelim</option>
+              <option value="Derbi">Derbi</option>
+              <option value="Ducati">Ducati</option>
+              <option value="GasGas">GasGas</option>
+              <option value="Gilera">Gilera</option>
+              <option value="Harley-Davidson">Harley-Davidson</option>
+              <option value="Honda">Honda</option>
+              <option value="Husaberg">Husaberg</option>
+              <option value="Husqvarna">Husqvarna</option>
+              <option value="Hyosung">Hyosung</option>
+              <option value="Italjet">Italjet</option>
+              <option value="Kawasaki">Kawasaki</option>
+              <option value="Keeway">Keeway</option>
+              <option value="Kreidler">Kreidler</option>
+              <option value="KTM">KTM</option>
+              <option value="Kymco">Kymco</option>
+              <option value="Laverda">Laverda</option>
+              <option value="LML">LML</option>
+              <option value="Malaguti">Malaguti</option>
+              <option value="MBK">MBK</option>
+              <option value="Moto Guzzi">Moto Guzzi</option>
+              <option value="Moto Morini">Moto Morini</option>
+              <option value="MV Agusta">MV Agusta</option>
+              <option value="MZ">MZ</option>
+              <option value="Peugeot">Peugeot</option>
+              <option value="PGO">PGO</option>
+              <option value="Piaggio">Piaggio</option>
+              <option value="Polaris">Polaris</option>
+              <option value="Puch">Puch</option>
+              <option value="Rieju">Rieju</option>
+              <option value="Royal Enfield">Royal Enfield</option>
+              <option value="Sachs">Sachs</option>
+              <option value="Suzuki">Suzuki</option>
+              <option value="Sym">Sym</option>
+              <option value="Triumph">Triumph</option>
+              <option value="Ural">Ural</option>
+              <option value="Vespa">Vespa</option>
+              <option value="Yamaha">Yamaha</option>
+              <option value="Dnepr">Dnepr</option>
+              <option value="AJP">AJP</option>
+              <option value="Casal">Casal</option>
+              <option value="Chang Jiang">Chang Jiang</option>
+              <option value="Famel">Famel</option>
+              <option value="Macal">Macal</option>
+              <option value="Montesa">Montesa</option>
+              <option value="Norton">Norton</option>
+              <option value="Sis Sachs">Sis Sachs</option>
+              <option value="Sanyang">Sanyang</option>
+              <option value="Outra não listada">Outra não listada</option>
+              <option value="Tomos">Tomos</option>
+              <option value="Vectrix">Vectrix</option>
+            </select><br>
+          </template>
+
+
+<!-- Adicionar uma revisão -->
+<template name="addRevisao">
+   <div id="addFicha">
+      <form>
+        <ul>
+            Inserir Reparação:<br>
+            KMs:
+            <input type="number" name="kilometros" placeholder="Inserir kms"><br>
+            <input type="checkbox" name="rep0" value="Revisao normal oleo e vela">Revisao normal oleo e vela<br>
+            <input type="checkbox" name="rep1" value="Mudou-se oleo motor">Mudar oleo motor<br>
+            <input type="checkbox" name="rep2" value="Mudou-se oleo travao frente" >Mudar oleo travao frente<br>
+            <input type="checkbox" name="rep3" value="Mudou-se oleo travao tras" >Mudar oleo travao tras<br>
+            <input type="checkbox" name="rep4" value="Mudou-se vela" >Mudar Vela<br>
+            <input type="checkbox" name="rep5" value="Verificou-se nivel oleo motor">Ver nivel oleo motor<br>
+            <input type="checkbox" name="rep6" value="Verifou-se nivel oleo travoes" >Verificar nivel oleo travoes<br>
+            <input type="checkbox" name="rep7" value="Verificou-se pressão pneus" id="verPressaoPneus">Verificar pressão pneus<br>
+            <input type="checkbox" name="rep8" value="Verificou-se pastilhas travão" id="verPastilhasTravao">VerificarTravoes<br>
+            <input type="checkbox" name="rep9" value="Mudou-se oleo motor" id="MudarOleo">Mudar Óleo<br>
+            <input type="checkbox" name="rep10" value="Mudou-se vela" id="MudarVela">Mudar Vela<br>
+            <input type="checkbox" name="rep11" value="Mudou-se filtro ar" >Mudar filtro Ar<br>
+            <input type="checkbox" name="rep12" value="Mudou-se filtro oleo" >Mudar filtro Oleo<br>
+            <input type="checkbox" name="rep13" value="Mudou-se pneu frente" >Mudar pneu frente<br>
+            <input type="checkbox" name="rep14" value="Mudou-se pneu tras" >Mudar pneu tras<br>
+            <input type="checkbox" name="rep15" value="Mudou-se bateria" >Mudar bateria<br>
+            <input type="checkbox" name="rep16" value="Rectificou-se motor" >Rectificar motor<br>
+            <input type="checkbox" name="rep17" value="Mudou-se água radiador" >Mudar água radiador<br>
+            <input type="checkbox" name="rep18" value="Limpou-se carburador" >Limpar carburador<br>
+            <input type="checkbox" name="rep19" value="Limpou-se Escape" >Limpar escape<br>
+            <input type="checkbox" name="rep19" value="Limpou-se filtro ar" >Limpar filtro ar<br>
+            <input type="checkbox" name="rep19" value="Mudou-se cabo embraiagem" >Mudar cabo embraiagem<br>
+            <input type="checkbox" name="rep19" value="Mudou-se corrente" >Mudar corrente<br>
+            <input type="submit" value="Adicionar Revisão" id="btnCheckboxes">
+        </ul>
+      </form>
+  </div>
+</template>
+
+<template name="listaRevisoes">
+{{#each revisao}}
+  <li><label>PERIODO: {{periodo}} DATA:: {{data}} foi realizada a ultima intervenção: </label></li>
+  <label>Kms:{{kms}}</label><br>
+  <li>{{_id}}</li>
+  <li>{{reparado}}</li>
+  <br>
+  {{> removeRevisao}}
+{{/each}}
+</template>
+
+
+
+<template name="removeRevisao">
+<!-- Botao para o evento que Remove o revisao escolhido-->
+<input type="button" class="remove" value="Remover Revisao">
+</template>
+
+<template name="removeFicha">
+<!-- Botao para o evento que Remove o ficha escolhido-->
+<input type="button" class="remove" value="Remover Ficha">
+</template>
+
+
+
+<template name="indiceRevisoes">
+  <ul class="legenda">Matricula   |    Modelo</ul>    
+  {{#each ficha}}
+  <ul class="item {{itemSelecionado}} ">{{matricula}} |  {{marca}}:{{modelo}}
+    {{#if itemSelecionado }}
+      <div id="dados">  
+        <ul class="dados">
+          <li><label>Id: {{_id}}</label></li> 
+          <li><label>Matricula: {{matricula}}</label></li>
+          <li><label>Marca: {{marca}}</label></li>
+          <li><label>Modelo: {{modelo}}</label></li>
+          <li><label>Ano: {{ano}}</label></li>
+          <li><label>Criado a: {{data1}}</label></li>
+          <!--Botão para editar a ficha selecionada-->
+          {{> editFicha}}
+          <!-- Botão para remover a ficha selecionada-->
+          {{> removeFicha}} 
+          {{> addRevisao}}
+          {{> listaRevisoes}}
+        </ul>
+      </div>  
+  {{/if}}
+  </ul>
+
+  
+  {{/each}}
+</template>
+
+
+<template name="editFicha">
+  <form>
+    <!--<input type="checkbox" name="checkbox1" />Check here-->
+    {{#if true}}
+    <li><label>Matricula:</label>   <input type="text" name="editMatricula" value={{matricula}} ></li>
+    <li><label>Marca:</label>   <input type="text" name="editMarca" value={{marca}}></li>
+    <li><label>Modelo:</label>   <input type="text" name="editModelo" value={{modelo}}></li>
+    <li><label>Ano:</label>   <input type="text" name="editAno" value={{ano}}></li>
+    <input type="submit" value="Editar Ficha">
+    {{/if}}
+    <br>
+</form>
+</template> 
